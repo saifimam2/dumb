@@ -9,13 +9,13 @@
 <body>
     <div class="input">
     <label for="Name" style="font-weight: 500; font-style: italic; color: white;">Enter your name :</label>
-    <input type="text" id="Name" onkeypress="myfunction()">
+    <input type="text" id="Name" onchange="myfunction()">
     </div>
     <div id="main">
    <h2 id="text"></h2>
    <div class="btns">
         <button id="yes" onclick="yes()">YES</button>
-        <button id="no" onclick="no()">NO</button>
+        <button id="no" onmouseenter="no()">NO</button>
     </div>
     </div>
 </body>
@@ -75,7 +75,9 @@
     function no(){
          let randX=Math.floor(Math.random() * 200)-100;
          let randY=Math.floor(Math.random() * 100);
-         document.getElementById("main").style.transform=`translate(${randX}%,${randY}%)`;
+         setTimeout(() => {
+            document.getElementById("main").style.transform=`translate(${randX}%,${randY}%)`;
+         }, 700);
 } 
   function yes(){
         document.getElementById("text").innerHTML="I knew it 🙂";
